@@ -1,0 +1,217 @@
+<div class="nav">
+  <div class="hamburger-menu">
+    <div class="hamburger-menu-bars"></div>
+    <div class="hamburger-menu-bars"></div>
+    <div class="hamburger-menu-bars"></div>
+  </div>
+    <div class="hamburger-x">
+    <div class="hamburger-x-bars bar-1"></div>
+    <div class="hamburger-x-bars bar-2"></div>
+  </div>
+</div>
+
+<div class="nav-overlay">
+  <ul class="nav-overlay-list">
+    <li>Početna</li>
+    <li>Novosti</li>
+    <li>Džemat</li>
+    <li>Kontakt</li>
+  </ul>
+</div>
+
+<div class="overlay-x"></div>
+
+<section>
+  <div class="container"><button>Test</button></div>
+    <div class="container"></div>
+
+    <div class="container"><button></button></div>
+  <div class="container"></div>
+  <div class="container"></div>
+  <div class="container"></div>
+  <div class="container"></div>
+  <div class="container"></div>
+
+</section>
+
+ 
+  --------------------------------------------------------------------------------------------------------
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Ubuntu&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.nav{
+  width: 100%;
+  height: 46px;
+  background-color: white;
+  box-shadow: 0 0 13px -10px;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+    transition: all 0.4s ease-in-out;
+
+  width: 30px;
+  height: 25px;
+  gap: 5px;
+  cursor: pointer;
+  float: right;
+  padding: .5rem 3rem;
+}
+
+.hamburger-menu-bars{
+  background: black;
+  width: 30px;
+  height: 5px;
+  border-radius: 50px;
+}
+
+.hamburger-x {
+  display: none;
+  transition: all 0.4s ease-in-out;
+  flex-direction: column;
+  width: max-content;
+  height: max-content;
+  gap: 5px;
+  cursor: pointer;
+  float: right;
+  padding: .5rem 3rem;
+ 
+
+  z-index: 99;
+}
+
+.hamburger-x-bars{
+  background: black;
+  width: calc(1.41421356237 * 25px);
+  height: 5px;
+  border-radius: 50px;
+  transform-origin: center;
+}
+
+.bar-1, bar-2{
+  position: relative;
+}
+
+.bar-1{
+  transform: rotate(45deg);
+ 
+  top: 10px;
+}
+
+.bar-2{
+  transform: rotate(-45deg);
+ 
+
+}
+
+
+
+.nav-overlay{
+  transform: translate(100%);
+  transition: transform 0.4s ease-in-out;
+  border-left: 5px solid #00763A;
+  position:absolute;
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(5.5px);
+  width: 30%;
+  margin-left: 70%;
+  height: calc(100% - 46px);
+ 
+}
+
+.nav-overlay-list{
+  transform: translate(100%);
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  gap: .5rem;
+  font-size: 24px;
+  box-sizing: border-box;
+  float: right;
+  padding-right: 3rem;
+  list-style: none;
+}
+
+.nav-overlay-list li{
+  display: flex;
+  list-style: none;
+}
+
+section{
+  display: flex;
+  gap:50px;
+  flex-wrap: wrap
+}
+
+.container{
+  width: 250px;
+  height: 250px;
+  background: blue;
+}
+
+
+.overlay-x{
+  transform: translate(-100%);
+  transition: transform 0.4s ease-in-out;
+  position:absolute;
+  background-color: rgba(255, 255, 255, 0);
+
+  width: 70%;
+  margin-left: 0%;
+  height: calc(100% - 46px);
+ 
+}
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------
+
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+const hamburgerX = document.querySelector(".hamburger-x");
+const navOverlay = document.querySelector(".nav-overlay");
+const navOverlayList = document.querySelector(".nav-overlay-list");
+const overlayX = document.querySelector(".overlay-x");
+
+hamburgerMenu.addEventListener("click", function(event) {
+                               hamburgerMenu.style.display = "none";
+                               hamburgerX.style.display = "flex";
+  navOverlay.style.transform = "translate(0%)";
+    navOverlayList.style.transform = "translate(0%)";
+  overlayX.style.transform = "translate(0%)"
+                               })
+
+hamburgerX.addEventListener("click", function(event) {
+  hamburgerX.style.display = "none";
+                               hamburgerMenu.style.display = "flex";
+                                navOverlay.style.transform = "translate(100%)";
+  navOverlayList.style.transform = "translate(100%)";
+  overlayX.style.transform = "translate(-100%)"
+                               })
+
+
+
+overlayX.addEventListener("click", function(event) {
+  hamburgerX.style.display = "none";
+                               hamburgerMenu.style.display = "flex";
+                                navOverlay.style.transform = "translate(100%)";
+  navOverlayList.style.transform = "translate(100%)";
+ 
+  overlayX.style.transform = "translate(-100%)"
+                               })
