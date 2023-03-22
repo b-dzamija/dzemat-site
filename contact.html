@@ -82,9 +82,9 @@
 
         <div class="contact-container">
             <form action="" class="upit-form">
-                <input type="text" placeholder="Ime i prezime">
-                <input type="email" placeholder="E-mail">
-                <textarea name="" id="" placeholder="Upit"></textarea>
+                <input class="name" type="text" placeholder="Ime i prezime">
+                <input class="email" type="email" placeholder="E-mail">
+                <textarea class="msg" name="" id="" placeholder="Upit"></textarea>
                 <button type="submit">Pošalji</button>
               </form>
               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11510.839355916814!2d18.352182!3d43.841114!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c98262458eb5%3A0xaf776dbdaeb6fede!2sBosanska%20D%C5%BEamija!5e0!3m2!1sen!2sba!4v1679506130265!5m2!1sen!2sba" class="contact-map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -200,5 +200,31 @@
     
 
     <script src="js/script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        const form = document.querySelector(`.contact-container`)
+        function sendMsg(e){
+            e.preventDefault();
+            
+              name = document.querySelector(`.name`)
+              email = document.querySelector(`.email`)
+              msg = document.querySelector(`.msg`)
+
+              Email.send({
+                SecureToken : "1c0bc88e-0c9b-4a8c-8fe1-75a614146c26",
+                To : 'upiti.bosanskadzamija@gmail.com',
+                From : email.value,
+                Subject : "Upit od " + name.value,
+                Body : msg.value
+            }).then(
+            message => alert(message)
+            );
+        }
+
+        form.addEventListener("submit", sendMsg)
+
+        
+
+    </script>
 </body>
 </html>
