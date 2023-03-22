@@ -213,9 +213,9 @@
               Email.send({
                 SecureToken : "1c0bc88e-0c9b-4a8c-8fe1-75a614146c26",
                 To : 'upiti.bosanskadzamija@gmail.com',
-                From : email.value,
-                Subject : "Upit od " + name.value,
-                Body : msg.value
+                From : "upiti.bosanskadzamija@gmail.com",
+                Subject : "Upit",
+                Body : email.value + "--- \n" + msg.value
             }).then(
             message => alert(message)
             );
