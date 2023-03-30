@@ -39,3 +39,15 @@ const navLogo2 = document.querySelector("#nav-logo-2");
 navLogo2.addEventListener("click", function(event) {
     window.open("../index.html", "_self")
 })
+
+const dzematCard = document.querySelector(".dzemat-card")
+const dzematCardOverlay = document.querySelector(".o-dzematu-overlay")
+const xMark = document.querySelector(".fa-solid.fa-xmark")
+
+xMark.addEventListener("click", (event) => {
+    dzematCardOverlay.style.display = "none"
+})
+
+dzematCard.addEventListener("click", (event) => {
+    dzematCardOverlay.style.display = "block"
+})

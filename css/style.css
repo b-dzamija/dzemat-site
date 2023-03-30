@@ -431,14 +431,16 @@ a.contact-container-item-text{
 
 .main-container-contact{
     width: 100%;
-    margin-top: 100px;
+    margin-top: calc(75px + 50px);
+    margin-bottom: 50px;
+    padding-left: 3rem;
+    padding-right: 3rem;
     text-align: center;
     display: flex;
     gap: 1.5rem;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 3rem;
   }
 
 .contact-container{
@@ -460,6 +462,7 @@ a.contact-container-item-text{
   }
   
   .upit-form input{
+    width: 200px;
     font-size: 1rem;
     padding: .5rem 1rem;
     border-radius: 10px;
@@ -469,6 +472,7 @@ a.contact-container-item-text{
   
   .upit-form textarea{
     height: 100px;
+    width: 200px;
     font-size: 1rem;
     padding: .5rem 1rem;
     border-radius: 10px;
@@ -502,4 +506,101 @@ a.contact-container-item-text{
         flex-direction: column;
         align-items: center;
     }
+}
+
+.main-container-dzemat{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: calc(75px + 50px);
+    margin-bottom: 50px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.dzemat-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.dzemat-card{
+    width: 215px;
+    height: 215px;
+    background: white;
+    border-radius: 17px;
+    border: 1px solid rgba(128, 128, 128, 0.422);
+    box-shadow: 0px 0px 10px -6px black;
+    position: relative;
+    cursor: pointer;
+}
+
+.dzemat-card-img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: opacity(0.25) blur(1.5px);
+    border-radius: 17px;
+
+}
+
+.dzemat-card .dzemat-card-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.dzemat-card:hover{
+    transform: translateY(-3px);
+}
+
+.o-dzematu-overlay{
+    display: none;
+    z-index: 9;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(3.3px);
+}
+
+.card-overlay-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    width: 85%;
+    height: 75%;
+    background-color: white;
+    border-radius: 17px;
+    border: 1px solid rgba(128, 128, 128, 0.422);
+    box-shadow: 0px 0px 10px -6px black;
+    padding: 5rem 3rem;
+}
+
+.card-overlay-container-x{
+    position: absolute;
+    top: 1.5rem;
+    right: 3rem;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.card-overlay-container p{
+    overflow: auto;
+    height: 100%;
 }
