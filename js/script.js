@@ -40,14 +40,47 @@ navLogo2.addEventListener("click", function(event) {
     window.open("../index.html", "_self")
 })
 
-const dzematCard = document.querySelector(".dzemat-card")
-const dzematCardOverlay = document.querySelector(".o-dzematu-overlay")
-const xMark = document.querySelector(".fa-solid.fa-xmark")
+const xMark = document.querySelectorAll(".fa-xmark")
 
-xMark.addEventListener("click", (event) => {
-    dzematCardOverlay.style.display = "none"
-})
+const allOverlays = document.querySelectorAll(".o-dzematu-overlay")
 
-dzematCard.addEventListener("click", (event) => {
-    dzematCardOverlay.style.display = "block"
-})
+const dzematCard = document.querySelectorAll(".dzemat-card")
+const dzematCardOverlay = document.querySelectorAll(".o-dzematu-overlay")
+
+for (let i = 0; i < dzematCard.length; i++) {
+    dzematCard[i].addEventListener("click", function() {
+        dzematCardOverlay[i].style.display = "block"
+    });
+}
+
+// dzematCard.addEventListener("click", (event) => {
+//     dzematCardOverlay.style.display = "block"
+// })
+
+// const imamCard = document.querySelector(".dzemat-card.imam")
+// const imamCardOverlay = document.querySelector(".o-dzematu-overlay.imam")
+
+// imamCard.addEventListener("click", (event) => {
+//     imamCardOverlay.style.display = "block"
+// })
+
+
+
+for (let i = 0; i < xMark.length; i++) {
+    xMark[i].addEventListener("click", function() {
+        allOverlays[i].style.display = "none"
+    });
+}
+
+
+// xMark.addEventListener("click", (event) => {
+//     dzematCardOverlay.style.display = "none"
+//     imamCardOverlay.style.display = "none"
+// })
+// const imamCard = document.querySelector(".imam-card")
+
+// const dzematCard = document.querySelector(".dzemat-card")
+// const dzematCardOverlay = document.querySelector(".o-dzematu-overlay")
+
+
+
