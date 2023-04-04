@@ -642,24 +642,24 @@ a.contact-container-item-text{
     z-index: 2;
     background: none;
     border: none;
-    font-size: 4rem;
+    font-size: 2rem;
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, .45);
     cursor: pointer;
     border-radius: 12px;
     padding: 0 .5rem;
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .1);
 }
 
 .carousel-button:hover,
 .carousel-button:focus{
-    color: white;
-    background-color: rgba(0, 0, 0, .3);
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .carousel-button:focus{
-    outline: 1px solid black;
+    outline: 1px solid rgba(0, 0, 0, .3);
 }
 
 .carousel-button.prev{
@@ -849,4 +849,8 @@ a.contact-container-item-text{
     border: 3px solid var(--color-2);
     color: var(--color-2);
     transition: all .4s;
+  }
+
+  .galerija{
+    height: 40%;
   }
