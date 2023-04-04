@@ -17,8 +17,8 @@
     --color-2: #af9b6f;
     --color-3: #f2f2f2;
     --bg-color: hsl(49 37% 94%);
-    --typewriterSpeed: 3s;
-    --typewriterCharacters: 24;
+    --typewriterSpeed: 2.5s;
+    --typewriterCharacters: 35;
 }
 
 html{
@@ -711,7 +711,7 @@ a.contact-container-item-text{
     font-weight: 400;
     opacity: 0;
     transform: translateY(3rem);
-    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + .95s) forwards;
   }
   
   @keyframes typewriter {
@@ -738,4 +738,115 @@ a.contact-container-item-text{
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
+  }
+
+  .container-scroll::-webkit-scrollbar {
+    height: 8px;
+    cursor: pointer;
+  }
+  .container-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  .container-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-2);
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  .container-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--color-2);
+    cursor: pointer;
+  }
+  .container-scroll {
+    margin-top: -2rem;
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    background: var(--color-1);
+    border-radius: 12px;
+    padding: 30px;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    scroll-padding: 30px;
+    /* border: 1px solid rgba(128, 128, 128, 0.084); */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  }
+  .container-scroll .card {
+    max-width: 250px;
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 12px;
+    background: #fff;
+    scroll-snap-align: start;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  }
+  .container-scroll .card .image {
+    height: 150px;
+    width: 150px;
+    padding: 4px;
+    background: var(--color-2);
+    border-radius: 50%;
+  }
+  .container-scroll .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+  }
+  .container-scroll .card h2 {
+    margin-top: 25px;
+    color: #232323;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    width: 225px;
+  }
+  .container-scroll .card p {
+    width: 225px;
+    margin-top: 4px;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+  }
+  .container-scroll .card a {
+    width: 75px;
+    height: 30px;
+    margin-top: 8px;
+    font-weight: 400;
+    color: var(--primary);
+    background: var(--color-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 7px;
+  }
+  
+  .ploca-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ploca-button a{
+    color: var(--color-1);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 3px solid var(--color-1);
+    padding: 12px 15px;
+    background: #af9b6f00;
+  }
+
+  .ploca-button a:hover{
+    background-color: #af9b6f05;
+    border: 3px solid var(--color-2);
+    color: var(--color-2);
+    transition: all .4s;
   }
