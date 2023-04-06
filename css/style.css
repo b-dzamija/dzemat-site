@@ -833,24 +833,82 @@ a.contact-container-item-text{
     justify-content: center;
   }
 
-  .ploca-button a{
-    color: var(--color-1);
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 12px;
-    border: 3px solid var(--color-1);
-    padding: 12px 15px;
-    background: #af9b6f00;
+  .ploca-button a:hover{
+    color: var(--color-2);
   }
 
-  .ploca-button a:hover{
-    background-color: #af9b6f05;
-    border: 3px solid var(--color-2);
-    color: var(--color-2);
-    transition: all .4s;
-  }
 
   .galerija{
     height: 40%;
+  }
+
+  
+  .ploca-button-container {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    font-family: sans-serif;
+    cursor: pointer;
+    color: #00763a;
+  }
+
+  .ploca-box {
+    width: 200px;
+    height: 70px;
+    border-radius: 12px;
+    background: #af9b6f55;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 2rem;
+  }
+  .ploca::before {
+    content: "";
+    position: absolute;
+    width: 500%;
+    height: 500%;
+    background-image: conic-gradient(#00763a 20deg, transparent 120deg);
+    border-radius: 50%;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .ploca:hover::before{
+    content: "";
+    position: absolute;
+    width: 500%;
+    height: 500%;
+    background-image: conic-gradient(var(--color-2) 20deg, transparent 120deg);
+    border-radius: 50%;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .ploca::after {
+    content: 'OGLASNA PLOČA';
+    border-radius: 6px;
+    font-weight: bold;
+    position: absolute;
+    width: 185px;
+    height: 55px;
+    background: rgba(255, 255, 255);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    
+  }
+
+  .ploca:hover::after{
+    color: var(--color-2);
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
   }
