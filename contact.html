@@ -215,7 +215,7 @@
                 To : 'upiti.bosanskadzamija@gmail.com',
                 From : "upiti.bosanskadzamija@gmail.com",
                 Subject : "Upit",
-                Body : email.value + "--- \n" + msg.value
+                Body : `<p style="font-size: 1rem;">email: ` + email.value + "<br><br>Mail:<br>" + msg.value
             }).then(
             message => alert("Upit uspješno poslan!")
             );
